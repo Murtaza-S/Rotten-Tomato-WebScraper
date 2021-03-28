@@ -1,0 +1,334 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> start
+Rule 1     start -> director
+Rule 2     start -> title
+Rule 3     start -> producer
+Rule 4     start -> writer
+Rule 5     start -> boxoffice
+Rule 6     start -> runtime
+Rule 7     start -> storyline
+Rule 8     start -> language
+Rule 9     director -> PREDIRECTOR name
+Rule 10    title -> PRETITLE STRING POSTTITLE
+Rule 11    producer -> PREPRODUCER name
+Rule 12    writer -> PREWRITER name
+Rule 13    storyline -> PRESTORYLINE STRING
+Rule 14    boxoffice -> PREBOXOFFICE COST
+Rule 15    language -> PRELANGUAGE STRING
+Rule 16    runtime -> PRERUNTIME STRING POSTRUNTIME
+Rule 17    name -> HEAD STRING AEND
+Rule 18    name -> HEAD STRING AEND2 name
+
+Terminals, with rules where they appear
+
+AEND                 : 17
+AEND2                : 18
+COST                 : 14
+HEAD                 : 17 18
+POSTRUNTIME          : 16
+POSTTITLE            : 10
+PREBOXOFFICE         : 14
+PREDIRECTOR          : 9
+PRELANGUAGE          : 15
+PREPRODUCER          : 11
+PRERUNTIME           : 16
+PRESTORYLINE         : 13
+PRETITLE             : 10
+PREWRITER            : 12
+STRING               : 10 13 15 16 17 18
+error                : 
+
+Nonterminals, with rules where they appear
+
+boxoffice            : 5
+director             : 1
+language             : 8
+name                 : 9 11 12 18
+producer             : 3
+runtime              : 6
+start                : 0
+storyline            : 7
+title                : 2
+writer               : 4
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . start
+    (1) start -> . director
+    (2) start -> . title
+    (3) start -> . producer
+    (4) start -> . writer
+    (5) start -> . boxoffice
+    (6) start -> . runtime
+    (7) start -> . storyline
+    (8) start -> . language
+    (9) director -> . PREDIRECTOR name
+    (10) title -> . PRETITLE STRING POSTTITLE
+    (11) producer -> . PREPRODUCER name
+    (12) writer -> . PREWRITER name
+    (14) boxoffice -> . PREBOXOFFICE COST
+    (16) runtime -> . PRERUNTIME STRING POSTRUNTIME
+    (13) storyline -> . PRESTORYLINE STRING
+    (15) language -> . PRELANGUAGE STRING
+
+    PREDIRECTOR     shift and go to state 10
+    PRETITLE        shift and go to state 11
+    PREPRODUCER     shift and go to state 12
+    PREWRITER       shift and go to state 13
+    PREBOXOFFICE    shift and go to state 14
+    PRERUNTIME      shift and go to state 15
+    PRESTORYLINE    shift and go to state 16
+    PRELANGUAGE     shift and go to state 17
+
+    start                          shift and go to state 1
+    director                       shift and go to state 2
+    title                          shift and go to state 3
+    producer                       shift and go to state 4
+    writer                         shift and go to state 5
+    boxoffice                      shift and go to state 6
+    runtime                        shift and go to state 7
+    storyline                      shift and go to state 8
+    language                       shift and go to state 9
+
+state 1
+
+    (0) S' -> start .
+
+
+
+state 2
+
+    (1) start -> director .
+
+    $end            reduce using rule 1 (start -> director .)
+
+
+state 3
+
+    (2) start -> title .
+
+    $end            reduce using rule 2 (start -> title .)
+
+
+state 4
+
+    (3) start -> producer .
+
+    $end            reduce using rule 3 (start -> producer .)
+
+
+state 5
+
+    (4) start -> writer .
+
+    $end            reduce using rule 4 (start -> writer .)
+
+
+state 6
+
+    (5) start -> boxoffice .
+
+    $end            reduce using rule 5 (start -> boxoffice .)
+
+
+state 7
+
+    (6) start -> runtime .
+
+    $end            reduce using rule 6 (start -> runtime .)
+
+
+state 8
+
+    (7) start -> storyline .
+
+    $end            reduce using rule 7 (start -> storyline .)
+
+
+state 9
+
+    (8) start -> language .
+
+    $end            reduce using rule 8 (start -> language .)
+
+
+state 10
+
+    (9) director -> PREDIRECTOR . name
+    (17) name -> . HEAD STRING AEND
+    (18) name -> . HEAD STRING AEND2 name
+
+    HEAD            shift and go to state 19
+
+    name                           shift and go to state 18
+
+state 11
+
+    (10) title -> PRETITLE . STRING POSTTITLE
+
+    STRING          shift and go to state 20
+
+
+state 12
+
+    (11) producer -> PREPRODUCER . name
+    (17) name -> . HEAD STRING AEND
+    (18) name -> . HEAD STRING AEND2 name
+
+    HEAD            shift and go to state 19
+
+    name                           shift and go to state 21
+
+state 13
+
+    (12) writer -> PREWRITER . name
+    (17) name -> . HEAD STRING AEND
+    (18) name -> . HEAD STRING AEND2 name
+
+    HEAD            shift and go to state 19
+
+    name                           shift and go to state 22
+
+state 14
+
+    (14) boxoffice -> PREBOXOFFICE . COST
+
+    COST            shift and go to state 23
+
+
+state 15
+
+    (16) runtime -> PRERUNTIME . STRING POSTRUNTIME
+
+    STRING          shift and go to state 24
+
+
+state 16
+
+    (13) storyline -> PRESTORYLINE . STRING
+
+    STRING          shift and go to state 25
+
+
+state 17
+
+    (15) language -> PRELANGUAGE . STRING
+
+    STRING          shift and go to state 26
+
+
+state 18
+
+    (9) director -> PREDIRECTOR name .
+
+    $end            reduce using rule 9 (director -> PREDIRECTOR name .)
+
+
+state 19
+
+    (17) name -> HEAD . STRING AEND
+    (18) name -> HEAD . STRING AEND2 name
+
+    STRING          shift and go to state 27
+
+
+state 20
+
+    (10) title -> PRETITLE STRING . POSTTITLE
+
+    POSTTITLE       shift and go to state 28
+
+
+state 21
+
+    (11) producer -> PREPRODUCER name .
+
+    $end            reduce using rule 11 (producer -> PREPRODUCER name .)
+
+
+state 22
+
+    (12) writer -> PREWRITER name .
+
+    $end            reduce using rule 12 (writer -> PREWRITER name .)
+
+
+state 23
+
+    (14) boxoffice -> PREBOXOFFICE COST .
+
+    $end            reduce using rule 14 (boxoffice -> PREBOXOFFICE COST .)
+
+
+state 24
+
+    (16) runtime -> PRERUNTIME STRING . POSTRUNTIME
+
+    POSTRUNTIME     shift and go to state 29
+
+
+state 25
+
+    (13) storyline -> PRESTORYLINE STRING .
+
+    $end            reduce using rule 13 (storyline -> PRESTORYLINE STRING .)
+
+
+state 26
+
+    (15) language -> PRELANGUAGE STRING .
+
+    $end            reduce using rule 15 (language -> PRELANGUAGE STRING .)
+
+
+state 27
+
+    (17) name -> HEAD STRING . AEND
+    (18) name -> HEAD STRING . AEND2 name
+
+    AEND            shift and go to state 30
+    AEND2           shift and go to state 31
+
+
+state 28
+
+    (10) title -> PRETITLE STRING POSTTITLE .
+
+    $end            reduce using rule 10 (title -> PRETITLE STRING POSTTITLE .)
+
+
+state 29
+
+    (16) runtime -> PRERUNTIME STRING POSTRUNTIME .
+
+    $end            reduce using rule 16 (runtime -> PRERUNTIME STRING POSTRUNTIME .)
+
+
+state 30
+
+    (17) name -> HEAD STRING AEND .
+
+    $end            reduce using rule 17 (name -> HEAD STRING AEND .)
+
+
+state 31
+
+    (18) name -> HEAD STRING AEND2 . name
+    (17) name -> . HEAD STRING AEND
+    (18) name -> . HEAD STRING AEND2 name
+
+    HEAD            shift and go to state 19
+
+    name                           shift and go to state 32
+
+state 32
+
+    (18) name -> HEAD STRING AEND2 name .
+
+    $end            reduce using rule 18 (name -> HEAD STRING AEND2 name .)
+
